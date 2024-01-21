@@ -32,49 +32,60 @@ Attach contract instance:
    ```const onchainID = await OnchainID.attach("deployed_contract_address_here");```
 
    
-   `Declare the variables`
-   \\let email;
-   \\ let userkyc;
+   Declare the variables:
+
+   ```let email;```
+   ```let userkyc;```
    
 
-    //Register new user
-    await onchainID.registerUser();
+   Register new user:
 
-    //Retrieve user info
-    const userInfo = await onchainID.getUserInfo(signer.address);
-    console.log(userInfo);
+   ```await onchainID.registerUser();```
 
-    // Adding a new email attribute
-    await onchainID.addOrUpdateAttribute("email", "user@example.com");
+   Retrieve user info:
 
-    // Retrieve the email attribute and store it in the 'email' variable
-    email = await onchainID.getAttribute("email");
-    console.log("Email attribute:", email);
+   ```const userInfo = await onchainID.getUserInfo(signer.address);```
+   ```console.log(userInfo);```
 
-    // Updating the email attribute
-    await onchainID.addOrUpdateAttribute("email", "new-email@example.com");
+   Adding a new email attribute:
 
-    // Retrieve the updated email attribute using the same 'email' variable
-    email = await onchainID.getAttribute("email");
-    console.log("Updated email attribute:", email);
+   ```await onchainID.addOrUpdateAttribute("email", "user@example.com");```
 
-    // Set KYC status
-    await onchainID.updateKYCStatus("KYC Approved");
+   Retrieve the email attribute and store it in the 'email' variable:
 
-    // Retrieve and print the KYC status
-    userkyc = await onchainID.getKYCStatus(signer.address);
-    console.log("KYC Status:", userkyc);
+   ```email = await onchainID.getAttribute("email");```
+   ```console.log("Email attribute:", email);```
 
-    // Update KYC status
-    await onchainID.updateKYCStatus("KYC Not Approved");
+   Updating the email attribute:
 
-    // Retrieve and print the updated KYC status
-    userkyc = await onchainID.getKYCStatus(signer.address);
-    console.log("Updated KYC Status:", userkyc);
+   ```await onchainID.addOrUpdateAttribute("email", "new-email@example.com");```
+
+   Retrieve the updated email attribute using the same 'email' variable:
+
+   ```email = await onchainID.getAttribute("email");```
+   ```console.log("Updated email attribute:", email);```
+
+   Set KYC status:
+
+   ```await onchainID.updateKYCStatus("KYC Approved");```
+
+   Retrieve and print the KYC status:
+
+   ```userkyc = await onchainID.getKYCStatus(signer.address);```
+   ```console.log("KYC Status:", userkyc);```
+
+   Update KYC status:
+
+   ```await onchainID.updateKYCStatus("KYC Not Approved");```
+
+   Retrieve and print the updated KYC status:
+   
+   ```userkyc = await onchainID.getKYCStatus(signer.address);```
+   ```console.log("Updated KYC Status:", userkyc);```
 
 ## Contributing
 
-If you'd like to contribute to this project, please fork the repository, make your changes, and submit a pull request. We welcome contributions!
+If you'd like to contribute to this project, please fork the repository, make your changes, and submit a pull request. Contributions are welcome!
 
 ## License
 
