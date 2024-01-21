@@ -14,19 +14,19 @@
 
 
 ### //console #1 start the hardhat node
- npx hardhat node
+ ```npx hardhat node```
 
 ### //console #2 deploy the contract to local hardhat network
- npx hardhat run scripts/deploy.js --network localhost
+ ```npx hardhat run scripts/deploy.js --network localhost```
 
 ### //console #3 Launch Hardhat console 
- npx hardhat console --network localhost
+ ```npx hardhat console --network localhost```
 
 
     //Attach contract instance
-    const [signer] = await ethers.getSigners();
+   ```const [signer] = await ethers.getSigners();```
 
-    const OnchainID = await ethers.getContractFactory("OnchainID");
+   ```const OnchainID = await ethers.getContractFactory("OnchainID");```
 
     //const onchainID = await OnchainID.attach("deployed_contract_address_here");
 
