@@ -1,0 +1,47 @@
+//Launch Hardhat console
+npx hardhat console --network localhost
+
+
+//Attach contract instance
+const [signer] = await ethers.getSigners();
+
+const OnchainID = await ethers.getContractFactory("OnchainID");
+
+//const onchainID = await OnchainID.attach("deployed_contract_address_here");
+
+const onchainID = await OnchainID.attach("0x5FbDB2315678afecb367f032d93F642f64180aa3");
+
+
+//Register new user
+await onchainID.registerUser();
+
+//Retrieve user info
+const userInfo = await onchainID.getUserInfo(signer.address);
+console.log(userInfo);
+
+// Adding a new email attribute
+await onchainID.addOrUpdateAttribute("email", "user@example.com");
+
+// Updating an existing attribute
+await onchainID.addOrUpdateAttribute("email", "new-email@example.com");
+emailAttribute = await onchainID.getAttribute("email");
+console.log("Email:", emailAttribute);
+
+
+//Set kyc status
+await onchainID.updateKYCStatus("KYC Approved");
+
+//Change kyc status
+await onchainID.updateKYCStatus("KYC Not Approved");
+
+//retrieve kyc status
+const userkyc = await onchainID.getKYCStatus(signer.address);
+console.log(userkyc);
+
+
+// Call getUserInfo to retrieve the unique ID
+const userID = await onchainID.getUserInfo(userAddress);
+
+console.log("User ID:", userID);
+
+
