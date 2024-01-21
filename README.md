@@ -9,8 +9,8 @@
 3. **Install Dependencies:** `cd OCR-Service` and then `npm install` to install the required dependencies.
 
 4. **Testing:**
-
-   - Follow the steps outlined in the console to test various functions of the OnchainID contract.
+   - Run `npx hardhat test` to run the tests
+   - If all tests pass, follow the steps outlined below to test various functions of the OnchainID contract on the hardhat local network
 
 
 ### //console #1 start the hardhat node
