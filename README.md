@@ -23,18 +23,17 @@
  ```npx hardhat console --network localhost```
 
 
-    //Attach contract instance
+Attach contract instance
    ```const [signer] = await ethers.getSigners();```
 
    ```const OnchainID = await ethers.getContractFactory("OnchainID");```
 
-    //const onchainID = await OnchainID.attach("deployed_contract_address_here");
+   ```const onchainID = await OnchainID.attach("deployed_contract_address_here");```
 
-    const onchainID = await OnchainID.attach("0x5FbDB2315678afecb367f032d93F642f64180aa3");
-
-    // Declare the variables
-    let email;
-    let userkyc;
+   
+   Declare the variables
+   ```let email;
+    let userkyc;```
 
     //Register new user
     await onchainID.registerUser();
